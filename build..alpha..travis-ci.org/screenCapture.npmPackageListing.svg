@@ -1,0 +1,32 @@
+<svg height="462" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="462" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">  0.  2017-04-07 15:35:41 +0000  3461536 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-07 15:35:41 +0000     1078 bytes  LICENSE.txt</tspan>
+<tspan x="10" y="58">  2.  2017-04-07 15:35:41 +0000    14309 bytes  README.md</tspan>
+<tspan x="10" y="74">  3.  2017-04-07 15:35:41 +0000   821792 bytes  dist/zxcvbn.js</tspan>
+<tspan x="10" y="90">  4.  2017-04-07 15:35:41 +0000   877722 bytes  dist/zxcvbn.js.map</tspan>
+<tspan x="10" y="106">  5.  2017-04-07 15:35:41 +0000    10761 bytes  lib/adjacency_graphs.js</tspan>
+<tspan x="10" y="122">  6.  2017-04-07 15:35:41 +0000    20650 bytes  lib/adjacency_graphs.js.map</tspan>
+<tspan x="10" y="138">  7.  2017-04-07 15:35:41 +0000     4206 bytes  lib/feedback.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-07 15:35:41 +0000     2706 bytes  lib/feedback.js.map</tspan>
+<tspan x="10" y="170">  9.  2017-04-07 15:35:41 +0000   793041 bytes  lib/frequency_lists.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-07 15:35:41 +0000      572 bytes  lib/frequency_lists.js.map</tspan>
+<tspan x="10" y="202"> 11.  2017-04-07 15:35:41 +0000     1292 bytes  lib/main.js</tspan>
+<tspan x="10" y="218"> 12.  2017-04-07 15:35:41 +0000     1037 bytes  lib/main.js.map</tspan>
+<tspan x="10" y="234"> 13.  2017-04-07 15:35:41 +0000    21636 bytes  lib/matching.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-07 15:35:41 +0000    14551 bytes  lib/matching.js.map</tspan>
+<tspan x="10" y="266"> 15.  2017-04-07 15:35:41 +0000    14352 bytes  lib/scoring.js</tspan>
+<tspan x="10" y="282"> 16.  2017-04-07 15:35:41 +0000     9056 bytes  lib/scoring.js.map</tspan>
+<tspan x="10" y="298"> 17.  2017-04-07 15:35:41 +0000     2194 bytes  lib/time_estimates.js</tspan>
+<tspan x="10" y="314"> 18.  2017-04-07 15:35:41 +0000     2026 bytes  lib/time_estimates.js.map</tspan>
+<tspan x="10" y="330"> 19.  2017-04-07 15:35:41 +0000     3339 bytes  package.json</tspan>
+<tspan x="10" y="346"> 20.  2017-04-07 15:35:41 +0000     9814 bytes  src/adjacency_graphs.coffee</tspan>
+<tspan x="10" y="362"> 21.  2017-04-07 15:35:41 +0000     3866 bytes  src/feedback.coffee</tspan>
+<tspan x="10" y="378"> 22.  2017-04-07 15:35:41 +0000   792967 bytes  src/frequency_lists.coffee</tspan>
+<tspan x="10" y="394"> 23.  2017-04-07 15:35:41 +0000      899 bytes  src/main.coffee</tspan>
+<tspan x="10" y="410"> 24.  2017-04-07 15:35:41 +0000    20883 bytes  src/matching.coffee</tspan>
+<tspan x="10" y="426"> 25.  2017-04-07 15:35:41 +0000    14583 bytes  src/scoring.coffee</tspan>
+<tspan x="10" y="442"> 26.  2017-04-07 15:35:41 +0000     2204 bytes  src/time_estimates.coffee</tspan>
+</text>
+</svg>

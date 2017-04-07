@@ -1,0 +1,2676 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/dropbox/zxcvbn#readme"
+
+    >zxcvbn (v4.4.2)</a>
+</h1>
+<h4>realistic password strength estimation</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.zxcvbn">module zxcvbn</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">zxcvbn.</span>feedback</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">zxcvbn.</span>matching</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">zxcvbn.</span>scoring</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">zxcvbn.</span>time_estimates</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.zxcvbn.feedback">module zxcvbn.feedback</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.feedback.get_dictionary_match_feedback">
+            function <span class="apidocSignatureSpan">zxcvbn.feedback.</span>get_dictionary_match_feedback
+            <span class="apidocSignatureSpan">(match, is_sole_match)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.feedback.get_feedback">
+            function <span class="apidocSignatureSpan">zxcvbn.feedback.</span>get_feedback
+            <span class="apidocSignatureSpan">(score, sequence)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.feedback.get_match_feedback">
+            function <span class="apidocSignatureSpan">zxcvbn.feedback.</span>get_match_feedback
+            <span class="apidocSignatureSpan">(match, is_sole_match)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">zxcvbn.feedback.</span>default_feedback</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.zxcvbn.matching">module zxcvbn.matching</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.date_match">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>date_match
+            <span class="apidocSignatureSpan">(password)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.dictionary_match">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>dictionary_match
+            <span class="apidocSignatureSpan">(password, _ranked_dictionaries)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.empty">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>empty
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.enumerate_l33t_subs">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>enumerate_l33t_subs
+            <span class="apidocSignatureSpan">(table)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.extend">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>extend
+            <span class="apidocSignatureSpan">(lst, lst2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.l33t_match">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>l33t_match
+            <span class="apidocSignatureSpan">(password, _ranked_dictionaries, _l33t_table)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.map_ints_to_dm">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>map_ints_to_dm
+            <span class="apidocSignatureSpan">(ints)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.map_ints_to_dmy">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>map_ints_to_dmy
+            <span class="apidocSignatureSpan">(ints)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.mod">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>mod
+            <span class="apidocSignatureSpan">(n, m)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.omnimatch">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>omnimatch
+            <span class="apidocSignatureSpan">(password)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.regex_match">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>regex_match
+            <span class="apidocSignatureSpan">(password, _regexen)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.relevant_l33t_subtable">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>relevant_l33t_subtable
+            <span class="apidocSignatureSpan">(password, table)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.repeat_match">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>repeat_match
+            <span class="apidocSignatureSpan">(password)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.reverse_dictionary_match">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>reverse_dictionary_match
+            <span class="apidocSignatureSpan">(password, _ranked_dictionaries)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.sequence_match">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>sequence_match
+            <span class="apidocSignatureSpan">(password)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.set_user_input_dictionary">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>set_user_input_dictionary
+            <span class="apidocSignatureSpan">(ordered_list)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.sorted">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>sorted
+            <span class="apidocSignatureSpan">(matches)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.spatial_match">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>spatial_match
+            <span class="apidocSignatureSpan">(password, _graphs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.spatial_match_helper">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>spatial_match_helper
+            <span class="apidocSignatureSpan">(password, graph, graph_name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.translate">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>translate
+            <span class="apidocSignatureSpan">(string, chr_map)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.matching.two_to_four_digit_year">
+            function <span class="apidocSignatureSpan">zxcvbn.matching.</span>two_to_four_digit_year
+            <span class="apidocSignatureSpan">(year)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">zxcvbn.matching.</span>MAX_DELTA</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">zxcvbn.matching.</span>SHIFTED_RX</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.zxcvbn.scoring">module zxcvbn.scoring</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.bruteforce_guesses">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>bruteforce_guesses
+            <span class="apidocSignatureSpan">(match)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.date_guesses">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>date_guesses
+            <span class="apidocSignatureSpan">(match)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.dictionary_guesses">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>dictionary_guesses
+            <span class="apidocSignatureSpan">(match)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.estimate_guesses">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>estimate_guesses
+            <span class="apidocSignatureSpan">(match, password)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.factorial">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>factorial
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.l33t_variations">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>l33t_variations
+            <span class="apidocSignatureSpan">(match)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.log10">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>log10
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.log2">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>log2
+            <span class="apidocSignatureSpan">(n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.most_guessable_match_sequence">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>most_guessable_match_sequence
+            <span class="apidocSignatureSpan">(password, matches, _exclude_additive)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.nCk">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>nCk
+            <span class="apidocSignatureSpan">(n, k)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.regex_guesses">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>regex_guesses
+            <span class="apidocSignatureSpan">(match)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.repeat_guesses">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>repeat_guesses
+            <span class="apidocSignatureSpan">(match)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.sequence_guesses">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>sequence_guesses
+            <span class="apidocSignatureSpan">(match)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.spatial_guesses">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>spatial_guesses
+            <span class="apidocSignatureSpan">(match)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.scoring.uppercase_variations">
+            function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>uppercase_variations
+            <span class="apidocSignatureSpan">(match)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">zxcvbn.scoring.</span>KEYBOARD_AVERAGE_DEGREE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">zxcvbn.scoring.</span>KEYBOARD_STARTING_POSITIONS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">zxcvbn.scoring.</span>KEYPAD_AVERAGE_DEGREE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">zxcvbn.scoring.</span>KEYPAD_STARTING_POSITIONS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">zxcvbn.scoring.</span>MIN_YEAR_SPACE</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">zxcvbn.scoring.</span>REFERENCE_YEAR</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">zxcvbn.scoring.</span>ALL_LOWER</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">zxcvbn.scoring.</span>ALL_UPPER</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">zxcvbn.scoring.</span>END_UPPER</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">zxcvbn.scoring.</span>START_UPPER</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.zxcvbn.time_estimates">module zxcvbn.time_estimates</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.time_estimates.display_time">
+            function <span class="apidocSignatureSpan">zxcvbn.time_estimates.</span>display_time
+            <span class="apidocSignatureSpan">(seconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.time_estimates.estimate_attack_times">
+            function <span class="apidocSignatureSpan">zxcvbn.time_estimates.</span>estimate_attack_times
+            <span class="apidocSignatureSpan">(guesses)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.time_estimates.guesses_to_score">
+            function <span class="apidocSignatureSpan">zxcvbn.time_estimates.</span>guesses_to_score
+            <span class="apidocSignatureSpan">(guesses)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.zxcvbn" id="apidoc.module.zxcvbn">module zxcvbn</a></h1>
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.zxcvbn.feedback" id="apidoc.module.zxcvbn.feedback">module zxcvbn.feedback</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.feedback.get_dictionary_match_feedback" id="apidoc.element.zxcvbn.feedback.get_dictionary_match_feedback">
+        function <span class="apidocSignatureSpan">zxcvbn.feedback.</span>get_dictionary_match_feedback
+        <span class="apidocSignatureSpan">(match, is_sole_match)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get_dictionary_match_feedback = function (match, is_sole_match) {
+  var ref, result, suggestions, warning, word;
+  warning = match.dictionary_name === &#x27;passwords&#x27; ? is_sole_match &#x26;&#x26; !match.l33t &#x26;&#x26; !match.reversed ? match.rank &#x3c;= 10 ? &#x27;This is
+ a top-10 common password&#x27; : match.rank &#x3c;= 100 ? &#x27;This is a top-100 common password&#x27; : &#x27;This is a very common password&#x27; : match.
+guesses_log10 &#x3c;= 4 ? &#x27;This is similar to a commonly used password&#x27; : void 0 : match.dictionary_name === &#x27;english_wikipedia&#x27; ? is_sole_match
+ ? &#x27;A word by itself is easy to guess&#x27; : void 0 : (ref = match.dictionary_name) === &#x27;surnames&#x27; || ref === &#x27;male_names&#x27; || ref === &#x27;
+female_names&#x27; ? is_sole_match ? &#x27;Names and surnames by themselves are easy to guess&#x27; : &#x27;Common names and surnames are easy to guess
+&#x27; : &#x27;&#x27;;
+  suggestions = [];
+  word = match.token;
+  if (word.match(scoring.START_UPPER)) {
+    suggestions.push(&#x22;Capitalization doesn&#x27;t help very much&#x22;);
+  } else if (word.match(scoring.ALL_UPPER) &#x26;&#x26; word.toLowerCase() !== word) {
+    suggestions.push(&#x22;All-uppercase is almost as easy to guess as all-lowercase&#x22;);
+  }
+  if (match.reversed &#x26;&#x26; match.token.length &#x3e;= 4) {
+    suggestions.push(&#x22;Reversed words aren&#x27;t much harder to guess&#x22;);
+  }
+  if (match.l33t) {
+    suggestions.push(&#x22;Predictable substitutions like &#x27;@&#x27; instead of &#x27;a&#x27; don&#x27;t help very much&#x22;);
+  }
+  result = {
+    warning: warning,
+    suggestions: suggestions
+  };
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  return feedback;
+},
+get_match_feedback: function(match, is_sole_match) {
+  var layout, warning;
+  switch (match.pattern) {
+    case &#x27;dictionary&#x27;:
+      return this.<span class="apidocCodeKeywordSpan">get_dictionary_match_feedback</span>(match, is_sole_match);
+    case &#x27;spatial&#x27;:
+      layout = match.graph.toUpperCase();
+      warning = match.turns === 1 ? &#x27;Straight rows of keys are easy to guess&#x27; : &#x27;Short keyboard patterns are easy
+ to guess&#x27;;
+      return {
+        warning: warning,
+        suggestions: [&#x27;Use a longer keyboard pattern with more turns&#x27;]
+      };
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.feedback.get_feedback" id="apidoc.element.zxcvbn.feedback.get_feedback">
+        function <span class="apidocSignatureSpan">zxcvbn.feedback.</span>get_feedback
+        <span class="apidocSignatureSpan">(score, sequence)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get_feedback = function (score, sequence) {
+  var extra_feedback, i, len, longest_match, match, ref;
+  if (sequence.length === 0) {
+    return this.default_feedback;
+  }
+  if (score &#x3e; 2) {
+    return {
+      warning: &#x27;&#x27;,
+      suggestions: []
+    };
+  }
+  longest_match = sequence[0];
+  ref = sequence.slice(1);
+  for (i = 0, len = ref.length; i &#x3c; len; i++) {
+    match = ref[i];
+    if (match.token.length &#x3e; longest_match.token.length) {
+      longest_match = match;
+    }
+  }
+  feedback = this.get_match_feedback(longest_match, sequence.length === 1);
+  extra_feedback = &#x27;Add another word or two. Uncommon words are better.&#x27;;
+  if (feedback != null) {
+    feedback.suggestions.unshift(extra_feedback);
+    if (feedback.warning == null) {
+      feedback.warning = &#x27;&#x27;;
+    }
+  } else {
+    feedback = {
+      warning: &#x27;&#x27;,
+      suggestions: [extra_feedback]
+    };
+  }
+  return feedback;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.feedback.get_match_feedback" id="apidoc.element.zxcvbn.feedback.get_match_feedback">
+        function <span class="apidocSignatureSpan">zxcvbn.feedback.</span>get_match_feedback
+        <span class="apidocSignatureSpan">(match, is_sole_match)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get_match_feedback = function (match, is_sole_match) {
+  var layout, warning;
+  switch (match.pattern) {
+    case &#x27;dictionary&#x27;:
+      return this.get_dictionary_match_feedback(match, is_sole_match);
+    case &#x27;spatial&#x27;:
+      layout = match.graph.toUpperCase();
+      warning = match.turns === 1 ? &#x27;Straight rows of keys are easy to guess&#x27; : &#x27;Short keyboard patterns are easy to guess&#x27;;
+      return {
+        warning: warning,
+        suggestions: [&#x27;Use a longer keyboard pattern with more turns&#x27;]
+      };
+    case &#x27;repeat&#x27;:
+      warning = match.base_token.length === 1 ? &#x27;Repeats like &#x22;aaa&#x22; are easy to guess&#x27; : &#x27;Repeats like &#x22;abcabcabc&#x22; are only slightly
+ harder to guess than &#x22;abc&#x22;&#x27;;
+      return {
+        warning: warning,
+        suggestions: [&#x27;Avoid repeated words and characters&#x27;]
+      };
+    case &#x27;sequence&#x27;:
+      return {
+        warning: &#x22;Sequences like abc or 6543 are easy to guess&#x22;,
+        suggestions: [&#x27;Avoid sequences&#x27;]
+      };
+    case &#x27;regex&#x27;:
+      if (match.regex_name === &#x27;recent_year&#x27;) {
+        return {
+          warning: &#x22;Recent years are easy to guess&#x22;,
+          suggestions: [&#x27;Avoid recent years&#x27;, &#x27;Avoid years that are associated with you&#x27;]
+        };
+      }
+      break;
+    case &#x27;date&#x27;:
+      return {
+        warning: &#x22;Dates are often easy to guess&#x22;,
+        suggestions: [&#x27;Avoid dates and years that are associated with you&#x27;]
+      };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ref = sequence.slice(1);
+for (i = 0, len = ref.length; i &#x3c; len; i++) {
+  match = ref[i];
+  if (match.token.length &#x3e; longest_match.token.length) {
+    longest_match = match;
+  }
+}
+feedback = this.<span class="apidocCodeKeywordSpan">get_match_feedback</span>(longest_match, sequence.length === 1);
+extra_feedback = &#x27;Add another word or two. Uncommon words are better.&#x27;;
+if (feedback != null) {
+  feedback.suggestions.unshift(extra_feedback);
+  if (feedback.warning == null) {
+    feedback.warning = &#x27;&#x27;;
+  }
+} else {
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.zxcvbn.matching" id="apidoc.module.zxcvbn.matching">module zxcvbn.matching</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.date_match" id="apidoc.element.zxcvbn.matching.date_match">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>date_match
+        <span class="apidocSignatureSpan">(password)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">date_match = function (password) {
+  var best_candidate, candidate, candidates, distance, dmy, i, j, k, l, len1, len2, matches, maybe_date_no_separator, maybe_date_with_separator
+, metric, min_distance, o, p, q, r, ref, ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, rx_match, s, t, token;
+  matches = [];
+  maybe_date_no_separator = /^\d{4,8}$/;
+  maybe_date_with_separator = /^(\d{1,4})([\s\/\\_.-])(\d{1,2})\2(\d{1,4})$/;
+  for (i = o = 0, ref = password.length - 4; 0 &#x3c;= ref ? o &#x3c;= ref : o &#x3e;= ref; i = 0 &#x3c;= ref ? ++o : --o) {
+    for (j = p = ref1 = i + 3, ref2 = i + 7; ref1 &#x3c;= ref2 ? p &#x3c;= ref2 : p &#x3e;= ref2; j = ref1 &#x3c;= ref2 ? ++p : --p) {
+      if (j &#x3e;= password.length) {
+        break;
+      }
+      token = password.slice(i, +j + 1 || 9e9);
+      if (!maybe_date_no_separator.exec(token)) {
+        continue;
+      }
+      candidates = [];
+      ref3 = DATE_SPLITS[token.length];
+      for (q = 0, len1 = ref3.length; q &#x3c; len1; q++) {
+        ref4 = ref3[q], k = ref4[0], l = ref4[1];
+        dmy = this.map_ints_to_dmy([parseInt(token.slice(0, k)), parseInt(token.slice(k, l)), parseInt(token.slice(l))]);
+        if (dmy != null) {
+          candidates.push(dmy);
+        }
+      }
+      if (!(candidates.length &#x3e; 0)) {
+        continue;
+      }
+      best_candidate = candidates[0];
+      metric = function(candidate) {
+        return Math.abs(candidate.year - scoring.REFERENCE_YEAR);
+      };
+      min_distance = metric(candidates[0]);
+      ref5 = candidates.slice(1);
+      for (r = 0, len2 = ref5.length; r &#x3c; len2; r++) {
+        candidate = ref5[r];
+        distance = metric(candidate);
+        if (distance &#x3c; min_distance) {
+          ref6 = [candidate, distance], best_candidate = ref6[0], min_distance = ref6[1];
+        }
+      }
+      matches.push({
+        pattern: &#x27;date&#x27;,
+        token: token,
+        i: i,
+        j: j,
+        separator: &#x27;&#x27;,
+        year: best_candidate.year,
+        month: best_candidate.month,
+        day: best_candidate.day
+      });
+    }
+  }
+  for (i = s = 0, ref7 = password.length - 6; 0 &#x3c;= ref7 ? s &#x3c;= ref7 : s &#x3e;= ref7; i = 0 &#x3c;= ref7 ? ++s : --s) {
+    for (j = t = ref8 = i + 5, ref9 = i + 9; ref8 &#x3c;= ref9 ? t &#x3c;= ref9 : t &#x3e;= ref9; j = ref8 &#x3c;= ref9 ? ++t : --t) {
+      if (j &#x3e;= password.length) {
+        break;
+      }
+      token = password.slice(i, +j + 1 || 9e9);
+      rx_match = maybe_date_with_separator.exec(token);
+      if (rx_match == null) {
+        continue;
+      }
+      dmy = this.map_ints_to_dmy([parseInt(rx_match[1]), parseInt(rx_match[3]), parseInt(rx_match[4])]);
+      if (dmy == null) {
+        continue;
+      }
+      matches.push({
+        pattern: &#x27;date&#x27;,
+        token: token,
+        i: i,
+        j: j,
+        separator: rx_match[2],
+        year: dmy.year,
+        month: dmy.month,
+        day: dmy.day
+      });
+    }
+  }
+  return this.sorted(matches.filter(function(match) {
+    var is_submatch, len3, other_match, u;
+    is_submatch = false;
+    for (u = 0, len3 = matches.length; u &#x3c; len3; u++) {
+      other_match = matches[u];
+      if (match === other_match) {
+        continue;
+      }
+      if (other_match.i &#x3c;= match.i &#x26;&#x26; other_match.j &#x3e;= match.j) {
+        is_submatch = true;
+        break;
+      }
+    }
+    return !is_submatch;
+  }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.dictionary_match" id="apidoc.element.zxcvbn.matching.dictionary_match">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>dictionary_match
+        <span class="apidocSignatureSpan">(password, _ranked_dictionaries)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dictionary_match = function (password, _ranked_dictionaries) {
+  var dictionary_name, i, j, len, matches, o, p, password_lower, rank, ranked_dict, ref, ref1, ref2, word;
+  if (_ranked_dictionaries == null) {
+    _ranked_dictionaries = RANKED_DICTIONARIES;
+  }
+  matches = [];
+  len = password.length;
+  password_lower = password.toLowerCase();
+  for (dictionary_name in _ranked_dictionaries) {
+    ranked_dict = _ranked_dictionaries[dictionary_name];
+    for (i = o = 0, ref = len; 0 &#x3c;= ref ? o &#x3c; ref : o &#x3e; ref; i = 0 &#x3c;= ref ? ++o : --o) {
+      for (j = p = ref1 = i, ref2 = len; ref1 &#x3c;= ref2 ? p &#x3c; ref2 : p &#x3e; ref2; j = ref1 &#x3c;= ref2 ? ++p : --p) {
+        if (password_lower.slice(i, +j + 1 || 9e9) in ranked_dict) {
+          word = password_lower.slice(i, +j + 1 || 9e9);
+          rank = ranked_dict[word];
+          matches.push({
+            pattern: &#x27;dictionary&#x27;,
+            i: i,
+            j: j,
+            token: password.slice(i, +j + 1 || 9e9),
+            matched_word: word,
+            rank: rank,
+            dictionary_name: dictionary_name,
+            reversed: false,
+            l33t: false
+          });
+        }
+      }
+    }
+  }
+  return this.sorted(matches);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+reverse_dictionary_match: function(password, _ranked_dictionaries) {
+  var len1, match, matches, o, ref, reversed_password;
+  if (_ranked_dictionaries == null) {
+    _ranked_dictionaries = RANKED_DICTIONARIES;
+  }
+  reversed_password = password.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;);
+  matches = this.<span class="apidocCodeKeywordSpan">dictionary_match</span>(reversed_password, _ranked_dictionaries);
+  for (o = 0, len1 = matches.length; o &#x3c; len1; o++) {
+    match = matches[o];
+    match.token = match.token.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;);
+    match.reversed = true;
+    ref = [password.length - 1 - match.j, password.length - 1 - match.i], match.i = ref[0], match.j = ref[1];
+  }
+  return this.sorted(matches);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.empty" id="apidoc.element.zxcvbn.matching.empty">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>empty
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">empty = function (obj) {
+  var k;
+  return ((function() {
+    var results;
+    results = [];
+    for (k in obj) {
+      results.push(k);
+    }
+    return results;
+  })()).length === 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (_l33t_table == null) {
+  _l33t_table = L33T_TABLE;
+}
+matches = [];
+ref = this.enumerate_l33t_subs(this.relevant_l33t_subtable(password, _l33t_table));
+for (o = 0, len1 = ref.length; o &#x3c; len1; o++) {
+  sub = ref[o];
+  if (this.<span class="apidocCodeKeywordSpan">empty</span>(sub)) {
+    break;
+  }
+  subbed_password = this.translate(password, sub);
+  ref1 = this.dictionary_match(subbed_password, _ranked_dictionaries);
+  for (p = 0, len2 = ref1.length; p &#x3c; len2; p++) {
+    match = ref1[p];
+    token = password.slice(match.i, +match.j + 1 || 9e9);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.enumerate_l33t_subs" id="apidoc.element.zxcvbn.matching.enumerate_l33t_subs">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>enumerate_l33t_subs
+        <span class="apidocSignatureSpan">(table)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enumerate_l33t_subs = function (table) {
+  var chr, dedup, helper, k, keys, l33t_chr, len1, len2, o, p, ref, sub, sub_dict, sub_dicts, subs;
+  keys = (function() {
+    var results;
+    results = [];
+    for (k in table) {
+      results.push(k);
+    }
+    return results;
+  })();
+  subs = [[]];
+  dedup = function(subs) {
+    var assoc, deduped, label, len1, members, o, sub, v;
+    deduped = [];
+    members = {};
+    for (o = 0, len1 = subs.length; o &#x3c; len1; o++) {
+      sub = subs[o];
+      assoc = (function() {
+        var len2, p, results;
+        results = [];
+        for (v = p = 0, len2 = sub.length; p &#x3c; len2; v = ++p) {
+          k = sub[v];
+          results.push([k, v]);
+        }
+        return results;
+      })();
+      assoc.sort();
+      label = ((function() {
+        var len2, p, results;
+        results = [];
+        for (v = p = 0, len2 = assoc.length; p &#x3c; len2; v = ++p) {
+          k = assoc[v];
+          results.push(k + &#x27;,&#x27; + v);
+        }
+        return results;
+      })()).join(&#x27;-&#x27;);
+      if (!(label in members)) {
+        members[label] = true;
+        deduped.push(sub);
+      }
+    }
+    return deduped;
+  };
+  helper = function(keys) {
+    var dup_l33t_index, first_key, i, l33t_chr, len1, len2, next_subs, o, p, q, ref, ref1, rest_keys, sub, sub_alternative, sub_extension
+;
+    if (!keys.length) {
+      return;
+    }
+    first_key = keys[0];
+    rest_keys = keys.slice(1);
+    next_subs = [];
+    ref = table[first_key];
+    for (o = 0, len1 = ref.length; o &#x3c; len1; o++) {
+      l33t_chr = ref[o];
+      for (p = 0, len2 = subs.length; p &#x3c; len2; p++) {
+        sub = subs[p];
+        dup_l33t_index = -1;
+        for (i = q = 0, ref1 = sub.length; 0 &#x3c;= ref1 ? q &#x3c; ref1 : q &#x3e; ref1; i = 0 &#x3c;= ref1 ? ++q : --q) {
+          if (sub[i][0] === l33t_chr) {
+            dup_l33t_index = i;
+            break;
+          }
+        }
+        if (dup_l33t_index === -1) {
+          sub_extension = sub.concat([[l33t_chr, first_key]]);
+          next_subs.push(sub_extension);
+        } else {
+          sub_alternative = sub.slice(0);
+          sub_alternative.splice(dup_l33t_index, 1);
+          sub_alternative.push([l33t_chr, first_key]);
+          next_subs.push(sub);
+          next_subs.push(sub_alternative);
+        }
+      }
+    }
+    subs = dedup(next_subs);
+    return helper(rest_keys);
+  };
+  helper(keys);
+  sub_dicts = [];
+  for (o = 0, len1 = subs.length; o &#x3c; len1; o++) {
+    sub = subs[o];
+    sub_dict = {};
+    for (p = 0, len2 = sub.length; p &#x3c; len2; p++) {
+      ref = sub[p], l33t_chr = ref[0], chr = ref[1];
+      sub_dict[l33t_chr] = chr;
+    }
+    sub_dicts.push(sub_dict);
+  }
+  return sub_dicts;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (_ranked_dictionaries == null) {
+  _ranked_dictionaries = RANKED_DICTIONARIES;
+}
+if (_l33t_table == null) {
+  _l33t_table = L33T_TABLE;
+}
+matches = [];
+ref = this.<span class="apidocCodeKeywordSpan">enumerate_l33t_subs</span>(this.relevant_l33t_subtable(password, _l33t_table));
+for (o = 0, len1 = ref.length; o &#x3c; len1; o++) {
+  sub = ref[o];
+  if (this.empty(sub)) {
+    break;
+  }
+  subbed_password = this.translate(password, sub);
+  ref1 = this.dictionary_match(subbed_password, _ranked_dictionaries);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.extend" id="apidoc.element.zxcvbn.matching.extend">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>extend
+        <span class="apidocSignatureSpan">(lst, lst2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (lst, lst2) {
+  return lst.push.apply(lst, lst2);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+omnimatch: function(password) {
+  var len1, matcher, matchers, matches, o;
+  matches = [];
+  matchers = [this.dictionary_match, this.reverse_dictionary_match, this.l33t_match, this.spatial_match, this.repeat_match, this
+.sequence_match, this.regex_match, this.date_match];
+  for (o = 0, len1 = matchers.length; o &#x3c; len1; o++) {
+    matcher = matchers[o];
+    this.<span class="apidocCodeKeywordSpan">extend</span>(matches, matcher.call(this, password));
+  }
+  return this.sorted(matches);
+},
+dictionary_match: function(password, _ranked_dictionaries) {
+  var dictionary_name, i, j, len, matches, o, p, password_lower, rank, ranked_dict, ref, ref1, ref2, word;
+  if (_ranked_dictionaries == null) {
+    _ranked_dictionaries = RANKED_DICTIONARIES;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.l33t_match" id="apidoc.element.zxcvbn.matching.l33t_match">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>l33t_match
+        <span class="apidocSignatureSpan">(password, _ranked_dictionaries, _l33t_table)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">l33t_match = function (password, _ranked_dictionaries, _l33t_table) {
+  var chr, k, len1, len2, match, match_sub, matches, o, p, ref, ref1, sub, subbed_chr, subbed_password, token, v;
+  if (_ranked_dictionaries == null) {
+    _ranked_dictionaries = RANKED_DICTIONARIES;
+  }
+  if (_l33t_table == null) {
+    _l33t_table = L33T_TABLE;
+  }
+  matches = [];
+  ref = this.enumerate_l33t_subs(this.relevant_l33t_subtable(password, _l33t_table));
+  for (o = 0, len1 = ref.length; o &#x3c; len1; o++) {
+    sub = ref[o];
+    if (this.empty(sub)) {
+      break;
+    }
+    subbed_password = this.translate(password, sub);
+    ref1 = this.dictionary_match(subbed_password, _ranked_dictionaries);
+    for (p = 0, len2 = ref1.length; p &#x3c; len2; p++) {
+      match = ref1[p];
+      token = password.slice(match.i, +match.j + 1 || 9e9);
+      if (token.toLowerCase() === match.matched_word) {
+        continue;
+      }
+      match_sub = {};
+      for (subbed_chr in sub) {
+        chr = sub[subbed_chr];
+        if (token.indexOf(subbed_chr) !== -1) {
+          match_sub[subbed_chr] = chr;
+        }
+      }
+      match.l33t = true;
+      match.token = token;
+      match.sub = match_sub;
+      match.sub_display = ((function() {
+        var results;
+        results = [];
+        for (k in match_sub) {
+          v = match_sub[k];
+          results.push(k + &#x22; -&#x3e; &#x22; + v);
+        }
+        return results;
+      })()).join(&#x27;, &#x27;);
+      matches.push(match);
+    }
+  }
+  return this.sorted(matches.filter(function(match) {
+    return match.token.length &#x3e; 1;
+  }));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.map_ints_to_dm" id="apidoc.element.zxcvbn.matching.map_ints_to_dm">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>map_ints_to_dm
+        <span class="apidocSignatureSpan">(ints)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map_ints_to_dm = function (ints) {
+  var d, len1, m, o, ref, ref1;
+  ref = [ints, ints.slice().reverse()];
+  for (o = 0, len1 = ref.length; o &#x3c; len1; o++) {
+    ref1 = ref[o], d = ref1[0], m = ref1[1];
+    if ((1 &#x3c;= d &#x26;&#x26; d &#x3c;= 31) &#x26;&#x26; (1 &#x3c;= m &#x26;&#x26; m &#x3c;= 12)) {
+      return {
+        day: d,
+        month: m
+      };
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (over_31 &#x3e;= 2 || over_12 === 3 || under_1 &#x3e;= 2) {
+  return;
+}
+possible_year_splits = [[ints[2], ints.slice(0, 2)], [ints[0], ints.slice(1, 3)]];
+for (p = 0, len2 = possible_year_splits.length; p &#x3c; len2; p++) {
+  ref = possible_year_splits[p], y = ref[0], rest = ref[1];
+  if ((DATE_MIN_YEAR &#x3c;= y &#x26;&#x26; y &#x3c;= DATE_MAX_YEAR)) {
+    dm = this.<span class="apidocCodeKeywordSpan">map_ints_to_dm</span>(rest);
+    if (dm != null) {
+      return {
+        year: y,
+        month: dm.month,
+        day: dm.day
+      };
+    } else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.map_ints_to_dmy" id="apidoc.element.zxcvbn.matching.map_ints_to_dmy">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>map_ints_to_dmy
+        <span class="apidocSignatureSpan">(ints)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map_ints_to_dmy = function (ints) {
+  var dm, int, len1, len2, len3, o, over_12, over_31, p, possible_year_splits, q, ref, ref1, rest, under_1, y;
+  if (ints[1] &#x3e; 31 || ints[1] &#x3c;= 0) {
+    return;
+  }
+  over_12 = 0;
+  over_31 = 0;
+  under_1 = 0;
+  for (o = 0, len1 = ints.length; o &#x3c; len1; o++) {
+    int = ints[o];
+    if ((99 &#x3c; int &#x26;&#x26; int &#x3c; DATE_MIN_YEAR) || int &#x3e; DATE_MAX_YEAR) {
+      return;
+    }
+    if (int &#x3e; 31) {
+      over_31 += 1;
+    }
+    if (int &#x3e; 12) {
+      over_12 += 1;
+    }
+    if (int &#x3c;= 0) {
+      under_1 += 1;
+    }
+  }
+  if (over_31 &#x3e;= 2 || over_12 === 3 || under_1 &#x3e;= 2) {
+    return;
+  }
+  possible_year_splits = [[ints[2], ints.slice(0, 2)], [ints[0], ints.slice(1, 3)]];
+  for (p = 0, len2 = possible_year_splits.length; p &#x3c; len2; p++) {
+    ref = possible_year_splits[p], y = ref[0], rest = ref[1];
+    if ((DATE_MIN_YEAR &#x3c;= y &#x26;&#x26; y &#x3c;= DATE_MAX_YEAR)) {
+      dm = this.map_ints_to_dm(rest);
+      if (dm != null) {
+        return {
+          year: y,
+          month: dm.month,
+          day: dm.day
+        };
+      } else {
+        return;
+      }
+    }
+  }
+  for (q = 0, len3 = possible_year_splits.length; q &#x3c; len3; q++) {
+    ref1 = possible_year_splits[q], y = ref1[0], rest = ref1[1];
+    dm = this.map_ints_to_dm(rest);
+    if (dm != null) {
+      y = this.two_to_four_digit_year(y);
+      return {
+        year: y,
+        month: dm.month,
+        day: dm.day
+      };
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (!maybe_date_no_separator.exec(token)) {
+  continue;
+}
+candidates = [];
+ref3 = DATE_SPLITS[token.length];
+for (q = 0, len1 = ref3.length; q &#x3c; len1; q++) {
+  ref4 = ref3[q], k = ref4[0], l = ref4[1];
+  dmy = this.<span class="apidocCodeKeywordSpan">map_ints_to_dmy</span>([parseInt(token.slice(0, k)), parseInt(token.slice(k, l)),
+parseInt(token.slice(l))]);
+  if (dmy != null) {
+    candidates.push(dmy);
+  }
+}
+if (!(candidates.length &#x3e; 0)) {
+  continue;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.mod" id="apidoc.element.zxcvbn.matching.mod">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>mod
+        <span class="apidocSignatureSpan">(n, m)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mod = function (n, m) {
+  return ((n % m) + m) % m;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.omnimatch" id="apidoc.element.zxcvbn.matching.omnimatch">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>omnimatch
+        <span class="apidocSignatureSpan">(password)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">omnimatch = function (password) {
+  var len1, matcher, matchers, matches, o;
+  matches = [];
+  matchers = [this.dictionary_match, this.reverse_dictionary_match, this.l33t_match, this.spatial_match, this.repeat_match, this
+.sequence_match, this.regex_match, this.date_match];
+  for (o = 0, len1 = matchers.length; o &#x3c; len1; o++) {
+    matcher = matchers[o];
+    this.extend(matches, matcher.call(this, password));
+  }
+  return this.sorted(matches);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  match = greedy_match;
+  base_token = lazy_anchored.exec(match[0])[1];
+} else {
+  match = lazy_match;
+  base_token = match[1];
+}
+ref = [match.index, match.index + match[0].length - 1], i = ref[0], j = ref[1];
+base_analysis = scoring.most_guessable_match_sequence(base_token, this.<span class="apidocCodeKeywordSpan">omnimatch</span>(base_token
+));
+base_matches = base_analysis.sequence;
+base_guesses = base_analysis.guesses;
+matches.push({
+  pattern: &#x27;repeat&#x27;,
+  i: i,
+  j: j,
+  token: match[0],
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.regex_match" id="apidoc.element.zxcvbn.matching.regex_match">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>regex_match
+        <span class="apidocSignatureSpan">(password, _regexen)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">regex_match = function (password, _regexen) {
+  var matches, regex, rx_match, token;
+  if (_regexen == null) {
+    _regexen = REGEXEN;
+  }
+  matches = [];
+  for (name in _regexen) {
+    regex = _regexen[name];
+    regex.lastIndex = 0;
+    while (rx_match = regex.exec(password)) {
+      token = rx_match[0];
+      matches.push({
+        pattern: &#x27;regex&#x27;,
+        token: token,
+        i: rx_match.index,
+        j: rx_match.index + rx_match[0].length - 1,
+        regex_name: name,
+        regex_match: rx_match
+      });
+    }
+  }
+  return this.sorted(matches);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.relevant_l33t_subtable" id="apidoc.element.zxcvbn.matching.relevant_l33t_subtable">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>relevant_l33t_subtable
+        <span class="apidocSignatureSpan">(password, table)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relevant_l33t_subtable = function (password, table) {
+  var chr, len1, letter, o, password_chars, ref, relevant_subs, sub, subs, subtable;
+  password_chars = {};
+  ref = password.split(&#x27;&#x27;);
+  for (o = 0, len1 = ref.length; o &#x3c; len1; o++) {
+    chr = ref[o];
+    password_chars[chr] = true;
+  }
+  subtable = {};
+  for (letter in table) {
+    subs = table[letter];
+    relevant_subs = (function() {
+      var len2, p, results;
+      results = [];
+      for (p = 0, len2 = subs.length; p &#x3c; len2; p++) {
+        sub = subs[p];
+        if (sub in password_chars) {
+          results.push(sub);
+        }
+      }
+      return results;
+    })();
+    if (relevant_subs.length &#x3e; 0) {
+      subtable[letter] = relevant_subs;
+    }
+  }
+  return subtable;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (_ranked_dictionaries == null) {
+  _ranked_dictionaries = RANKED_DICTIONARIES;
+}
+if (_l33t_table == null) {
+  _l33t_table = L33T_TABLE;
+}
+matches = [];
+ref = this.enumerate_l33t_subs(this.<span class="apidocCodeKeywordSpan">relevant_l33t_subtable</span>(password, _l33t_table));
+for (o = 0, len1 = ref.length; o &#x3c; len1; o++) {
+  sub = ref[o];
+  if (this.empty(sub)) {
+    break;
+  }
+  subbed_password = this.translate(password, sub);
+  ref1 = this.dictionary_match(subbed_password, _ranked_dictionaries);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.repeat_match" id="apidoc.element.zxcvbn.matching.repeat_match">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>repeat_match
+        <span class="apidocSignatureSpan">(password)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">repeat_match = function (password) {
+  var base_analysis, base_guesses, base_matches, base_token, greedy, greedy_match, i, j, lastIndex, lazy, lazy_anchored, lazy_match
+, match, matches, ref;
+  matches = [];
+  greedy = /(.+)\1+/g;
+  lazy = /(.+?)\1+/g;
+  lazy_anchored = /^(.+?)\1+$/;
+  lastIndex = 0;
+  while (lastIndex &#x3c; password.length) {
+    greedy.lastIndex = lazy.lastIndex = lastIndex;
+    greedy_match = greedy.exec(password);
+    lazy_match = lazy.exec(password);
+    if (greedy_match == null) {
+      break;
+    }
+    if (greedy_match[0].length &#x3e; lazy_match[0].length) {
+      match = greedy_match;
+      base_token = lazy_anchored.exec(match[0])[1];
+    } else {
+      match = lazy_match;
+      base_token = match[1];
+    }
+    ref = [match.index, match.index + match[0].length - 1], i = ref[0], j = ref[1];
+    base_analysis = scoring.most_guessable_match_sequence(base_token, this.omnimatch(base_token));
+    base_matches = base_analysis.sequence;
+    base_guesses = base_analysis.guesses;
+    matches.push({
+      pattern: &#x27;repeat&#x27;,
+      i: i,
+      j: j,
+      token: match[0],
+      base_token: base_token,
+      base_guesses: base_guesses,
+      base_matches: base_matches,
+      repeat_count: match[0].length / base_token.length
+    });
+    lastIndex = j + 1;
+  }
+  return matches;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.reverse_dictionary_match" id="apidoc.element.zxcvbn.matching.reverse_dictionary_match">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>reverse_dictionary_match
+        <span class="apidocSignatureSpan">(password, _ranked_dictionaries)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reverse_dictionary_match = function (password, _ranked_dictionaries) {
+  var len1, match, matches, o, ref, reversed_password;
+  if (_ranked_dictionaries == null) {
+    _ranked_dictionaries = RANKED_DICTIONARIES;
+  }
+  reversed_password = password.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;);
+  matches = this.dictionary_match(reversed_password, _ranked_dictionaries);
+  for (o = 0, len1 = matches.length; o &#x3c; len1; o++) {
+    match = matches[o];
+    match.token = match.token.split(&#x27;&#x27;).reverse().join(&#x27;&#x27;);
+    match.reversed = true;
+    ref = [password.length - 1 - match.j, password.length - 1 - match.i], match.i = ref[0], match.j = ref[1];
+  }
+  return this.sorted(matches);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.sequence_match" id="apidoc.element.zxcvbn.matching.sequence_match">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>sequence_match
+        <span class="apidocSignatureSpan">(password)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sequence_match = function (password) {
+  var delta, i, j, k, last_delta, o, ref, result, update;
+  if (password.length === 1) {
+    return [];
+  }
+  update = (function(_this) {
+    return function(i, j, delta) {
+      var ref, sequence_name, sequence_space, token;
+      if (j - i &#x3e; 1 || Math.abs(delta) === 1) {
+        if ((0 &#x3c; (ref = Math.abs(delta)) &#x26;&#x26; ref &#x3c;= _this.MAX_DELTA)) {
+          token = password.slice(i, +j + 1 || 9e9);
+          if (/^[a-z]+$/.test(token)) {
+            sequence_name = &#x27;lower&#x27;;
+            sequence_space = 26;
+          } else if (/^[A-Z]+$/.test(token)) {
+            sequence_name = &#x27;upper&#x27;;
+            sequence_space = 26;
+          } else if (/^\d+$/.test(token)) {
+            sequence_name = &#x27;digits&#x27;;
+            sequence_space = 10;
+          } else {
+            sequence_name = &#x27;unicode&#x27;;
+            sequence_space = 26;
+          }
+          return result.push({
+            pattern: &#x27;sequence&#x27;,
+            i: i,
+            j: j,
+            token: password.slice(i, +j + 1 || 9e9),
+            sequence_name: sequence_name,
+            sequence_space: sequence_space,
+            ascending: delta &#x3e; 0
+          });
+        }
+      }
+    };
+  })(this);
+  result = [];
+  i = 0;
+  last_delta = null;
+  for (k = o = 1, ref = password.length; 1 &#x3c;= ref ? o &#x3c; ref : o &#x3e; ref; k = 1 &#x3c;= ref ? ++o : --o) {
+    delta = password.charCodeAt(k) - password.charCodeAt(k - 1);
+    if (last_delta == null) {
+      last_delta = delta;
+    }
+    if (delta === last_delta) {
+      continue;
+    }
+    j = k - 1;
+    update(i, j, last_delta);
+    i = j;
+    last_delta = delta;
+  }
+  update(i, password.length - 1, last_delta);
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.set_user_input_dictionary" id="apidoc.element.zxcvbn.matching.set_user_input_dictionary">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>set_user_input_dictionary
+        <span class="apidocSignatureSpan">(ordered_list)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set_user_input_dictionary = function (ordered_list) {
+  return RANKED_DICTIONARIES[&#x27;user_inputs&#x27;] = build_ranked_dict(ordered_list.slice());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.sorted" id="apidoc.element.zxcvbn.matching.sorted">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>sorted
+        <span class="apidocSignatureSpan">(matches)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sorted = function (matches) {
+  return matches.sort(function(m1, m2) {
+    return (m1.i - m2.i) || (m1.j - m2.j);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var len1, matcher, matchers, matches, o;
+  matches = [];
+  matchers = [this.dictionary_match, this.reverse_dictionary_match, this.l33t_match, this.spatial_match, this.repeat_match, this
+.sequence_match, this.regex_match, this.date_match];
+  for (o = 0, len1 = matchers.length; o &#x3c; len1; o++) {
+    matcher = matchers[o];
+    this.extend(matches, matcher.call(this, password));
+  }
+  return this.<span class="apidocCodeKeywordSpan">sorted</span>(matches);
+},
+dictionary_match: function(password, _ranked_dictionaries) {
+  var dictionary_name, i, j, len, matches, o, p, password_lower, rank, ranked_dict, ref, ref1, ref2, word;
+  if (_ranked_dictionaries == null) {
+    _ranked_dictionaries = RANKED_DICTIONARIES;
+  }
+  matches = [];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.spatial_match" id="apidoc.element.zxcvbn.matching.spatial_match">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>spatial_match
+        <span class="apidocSignatureSpan">(password, _graphs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">spatial_match = function (password, _graphs) {
+  var graph, graph_name, matches;
+  if (_graphs == null) {
+    _graphs = GRAPHS;
+  }
+  matches = [];
+  for (graph_name in _graphs) {
+    graph = _graphs[graph_name];
+    this.extend(matches, this.spatial_match_helper(password, graph, graph_name));
+  }
+  return this.sorted(matches);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.spatial_match_helper" id="apidoc.element.zxcvbn.matching.spatial_match_helper">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>spatial_match_helper
+        <span class="apidocSignatureSpan">(password, graph, graph_name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">spatial_match_helper = function (password, graph, graph_name) {
+  var adj, adjacents, cur_char, cur_direction, found, found_direction, i, j, last_direction, len1, matches, o, prev_char, shifted_count
+, turns;
+  matches = [];
+  i = 0;
+  while (i &#x3c; password.length - 1) {
+    j = i + 1;
+    last_direction = null;
+    turns = 0;
+    if ((graph_name === &#x27;qwerty&#x27; || graph_name === &#x27;dvorak&#x27;) &#x26;&#x26; this.SHIFTED_RX.exec(password.charAt(i))) {
+      shifted_count = 1;
+    } else {
+      shifted_count = 0;
+    }
+    while (true) {
+      prev_char = password.charAt(j - 1);
+      found = false;
+      found_direction = -1;
+      cur_direction = -1;
+      adjacents = graph[prev_char] || [];
+      if (j &#x3c; password.length) {
+        cur_char = password.charAt(j);
+        for (o = 0, len1 = adjacents.length; o &#x3c; len1; o++) {
+          adj = adjacents[o];
+          cur_direction += 1;
+          if (adj &#x26;&#x26; adj.indexOf(cur_char) !== -1) {
+            found = true;
+            found_direction = cur_direction;
+            if (adj.indexOf(cur_char) === 1) {
+              shifted_count += 1;
+            }
+            if (last_direction !== found_direction) {
+              turns += 1;
+              last_direction = found_direction;
+            }
+            break;
+          }
+        }
+      }
+      if (found) {
+        j += 1;
+      } else {
+        if (j - i &#x3e; 2) {
+          matches.push({
+            pattern: &#x27;spatial&#x27;,
+            i: i,
+            j: j - 1,
+            token: password.slice(i, j),
+            graph: graph_name,
+            turns: turns,
+            shifted_count: shifted_count
+          });
+        }
+        i = j;
+        break;
+      }
+    }
+  }
+  return matches;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var graph, graph_name, matches;
+  if (_graphs == null) {
+    _graphs = GRAPHS;
+  }
+  matches = [];
+  for (graph_name in _graphs) {
+    graph = _graphs[graph_name];
+    this.extend(matches, this.<span class="apidocCodeKeywordSpan">spatial_match_helper</span>(password, graph, graph_name));
+  }
+  return this.sorted(matches);
+},
+SHIFTED_RX: /[~!@#$%^&#x26;*()_+QWERTYUIOP{}|ASDFGHJKL:&#x22;ZXCVBNM&#x3c;&#x3e;?]/,
+spatial_match_helper: function(password, graph, graph_name) {
+  var adj, adjacents, cur_char, cur_direction, found, found_direction, i, j, last_direction, len1, matches, o, prev_char, shifted_count
+, turns;
+  matches = [];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.translate" id="apidoc.element.zxcvbn.matching.translate">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>translate
+        <span class="apidocSignatureSpan">(string, chr_map)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">translate = function (string, chr_map) {
+  var chr;
+  return ((function() {
+    var len1, o, ref, results;
+    ref = string.split(&#x27;&#x27;);
+    results = [];
+    for (o = 0, len1 = ref.length; o &#x3c; len1; o++) {
+      chr = ref[o];
+      results.push(chr_map[chr] || chr);
+    }
+    return results;
+  })()).join(&#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+matches = [];
+ref = this.enumerate_l33t_subs(this.relevant_l33t_subtable(password, _l33t_table));
+for (o = 0, len1 = ref.length; o &#x3c; len1; o++) {
+  sub = ref[o];
+  if (this.empty(sub)) {
+    break;
+  }
+  subbed_password = this.<span class="apidocCodeKeywordSpan">translate</span>(password, sub);
+  ref1 = this.dictionary_match(subbed_password, _ranked_dictionaries);
+  for (p = 0, len2 = ref1.length; p &#x3c; len2; p++) {
+    match = ref1[p];
+    token = password.slice(match.i, +match.j + 1 || 9e9);
+    if (token.toLowerCase() === match.matched_word) {
+      continue;
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.matching.two_to_four_digit_year" id="apidoc.element.zxcvbn.matching.two_to_four_digit_year">
+        function <span class="apidocSignatureSpan">zxcvbn.matching.</span>two_to_four_digit_year
+        <span class="apidocSignatureSpan">(year)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">two_to_four_digit_year = function (year) {
+  if (year &#x3e; 99) {
+    return year;
+  } else if (year &#x3e; 50) {
+    return year + 1900;
+  } else {
+    return year + 2000;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  }
+}
+for (q = 0, len3 = possible_year_splits.length; q &#x3c; len3; q++) {
+  ref1 = possible_year_splits[q], y = ref1[0], rest = ref1[1];
+  dm = this.map_ints_to_dm(rest);
+  if (dm != null) {
+    y = this.<span class="apidocCodeKeywordSpan">two_to_four_digit_year</span>(y);
+    return {
+      year: y,
+      month: dm.month,
+      day: dm.day
+    };
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.zxcvbn.scoring" id="apidoc.module.zxcvbn.scoring">module zxcvbn.scoring</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.bruteforce_guesses" id="apidoc.element.zxcvbn.scoring.bruteforce_guesses">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>bruteforce_guesses
+        <span class="apidocSignatureSpan">(match)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bruteforce_guesses = function (match) {
+  var guesses, min_guesses;
+  guesses = Math.pow(BRUTEFORCE_CARDINALITY, match.token.length);
+  if (guesses === Number.POSITIVE_INFINITY) {
+    guesses = Number.MAX_VALUE;
+  }
+  min_guesses = match.token.length === 1 ? MIN_SUBMATCH_GUESSES_SINGLE_CHAR + 1 : MIN_SUBMATCH_GUESSES_MULTI_CHAR + 1;
+  return Math.max(guesses, min_guesses);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.date_guesses" id="apidoc.element.zxcvbn.scoring.date_guesses">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>date_guesses
+        <span class="apidocSignatureSpan">(match)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">date_guesses = function (match) {
+  var guesses, year_space;
+  year_space = Math.max(Math.abs(match.year - this.REFERENCE_YEAR), this.MIN_YEAR_SPACE);
+  guesses = year_space * 365;
+  if (match.separator) {
+    guesses *= 4;
+  }
+  return guesses;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.dictionary_guesses" id="apidoc.element.zxcvbn.scoring.dictionary_guesses">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>dictionary_guesses
+        <span class="apidocSignatureSpan">(match)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dictionary_guesses = function (match) {
+  var reversed_variations;
+  match.base_guesses = match.rank;
+  match.uppercase_variations = this.uppercase_variations(match);
+  match.l33t_variations = this.l33t_variations(match);
+  reversed_variations = match.reversed &#x26;&#x26; 2 || 1;
+  return match.base_guesses * match.uppercase_variations * match.l33t_variations * reversed_variations;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.estimate_guesses" id="apidoc.element.zxcvbn.scoring.estimate_guesses">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>estimate_guesses
+        <span class="apidocSignatureSpan">(match, password)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">estimate_guesses = function (match, password) {
+  var estimation_functions, guesses, min_guesses;
+  if (match.guesses != null) {
+    return match.guesses;
+  }
+  min_guesses = 1;
+  if (match.token.length &#x3c; password.length) {
+    min_guesses = match.token.length === 1 ? MIN_SUBMATCH_GUESSES_SINGLE_CHAR : MIN_SUBMATCH_GUESSES_MULTI_CHAR;
+  }
+  estimation_functions = {
+    bruteforce: this.bruteforce_guesses,
+    dictionary: this.dictionary_guesses,
+    spatial: this.spatial_guesses,
+    repeat: this.repeat_guesses,
+    sequence: this.sequence_guesses,
+    regex: this.regex_guesses,
+    date: this.date_guesses
+  };
+  guesses = estimation_functions[match.pattern].call(this, match);
+  match.guesses = Math.max(guesses, min_guesses);
+  match.guesses_log10 = this.log10(match.guesses);
+  return match.guesses;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return results;
+  })()
+};
+update = (function(_this) {
+  return function(m, l) {
+    var competing_g, competing_l, g, k, pi, ref;
+    k = m.j;
+    pi = _this.<span class="apidocCodeKeywordSpan">estimate_guesses</span>(m, password);
+    if (l &#x3e; 1) {
+      pi *= optimal.pi[m.i - 1][l - 1];
+    }
+    g = _this.factorial(l) * pi;
+    if (!_exclude_additive) {
+      g += Math.pow(MIN_GUESSES_BEFORE_GROWING_SEQUENCE, l - 1);
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.factorial" id="apidoc.element.zxcvbn.scoring.factorial">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>factorial
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">factorial = function (n) {
+  var f, i, o, ref;
+  if (n &#x3c; 2) {
+    return 1;
+  }
+  f = 1;
+  for (i = o = 2, ref = n; 2 &#x3c;= ref ? o &#x3c;= ref : o &#x3e;= ref; i = 2 &#x3c;= ref ? ++o : --o) {
+    f *= i;
+  }
+  return f;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      return function(m, l) {
+var competing_g, competing_l, g, k, pi, ref;
+k = m.j;
+pi = _this.estimate_guesses(m, password);
+if (l &#x3e; 1) {
+  pi *= optimal.pi[m.i - 1][l - 1];
+}
+g = _this.<span class="apidocCodeKeywordSpan">factorial</span>(l) * pi;
+if (!_exclude_additive) {
+  g += Math.pow(MIN_GUESSES_BEFORE_GROWING_SEQUENCE, l - 1);
+}
+ref = optimal.g[k];
+for (competing_l in ref) {
+  competing_g = ref[competing_l];
+  if (competing_l &#x3e; l) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.l33t_variations" id="apidoc.element.zxcvbn.scoring.l33t_variations">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>l33t_variations
+        <span class="apidocSignatureSpan">(match)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">l33t_variations = function (match) {
+  var S, U, chr, chrs, i, o, p, possibilities, ref, ref1, subbed, unsubbed, variations;
+  if (!match.l33t) {
+    return 1;
+  }
+  variations = 1;
+  ref = match.sub;
+  for (subbed in ref) {
+    unsubbed = ref[subbed];
+    chrs = match.token.toLowerCase().split(&#x27;&#x27;);
+    S = ((function() {
+      var len, o, results;
+      results = [];
+      for (o = 0, len = chrs.length; o &#x3c; len; o++) {
+        chr = chrs[o];
+        if (chr === subbed) {
+          results.push(chr);
+        }
+      }
+      return results;
+    })()).length;
+    U = ((function() {
+      var len, o, results;
+      results = [];
+      for (o = 0, len = chrs.length; o &#x3c; len; o++) {
+        chr = chrs[o];
+        if (chr === unsubbed) {
+          results.push(chr);
+        }
+      }
+      return results;
+    })()).length;
+    if (S === 0 || U === 0) {
+      variations *= 2;
+    } else {
+      p = Math.min(U, S);
+      possibilities = 0;
+      for (i = o = 1, ref1 = p; 1 &#x3c;= ref1 ? o &#x3c;= ref1 : o &#x3e;= ref1; i = 1 &#x3c;= ref1 ? ++o : --o) {
+        possibilities += this.nCk(U + S, i);
+      }
+      variations *= possibilities;
+    }
+  }
+  return variations;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  return guesses;
+},
+dictionary_guesses: function(match) {
+  var reversed_variations;
+  match.base_guesses = match.rank;
+  match.uppercase_variations = this.uppercase_variations(match);
+  match.l33t_variations = this.<span class="apidocCodeKeywordSpan">l33t_variations</span>(match);
+  reversed_variations = match.reversed &#x26;&#x26; 2 || 1;
+  return match.base_guesses * match.uppercase_variations * match.l33t_variations * reversed_variations;
+},
+START_UPPER: /^[A-Z][^A-Z]+$/,
+END_UPPER: /^[^A-Z]+[A-Z]$/,
+ALL_UPPER: /^[^a-z]+$/,
+ALL_LOWER: /^[^A-Z]+$/,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.log10" id="apidoc.element.zxcvbn.scoring.log10">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>log10
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log10 = function (n) {
+  return Math.log(n) / Math.log(10);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    guesses = 1;
+  } else {
+    guesses = optimal.g[n - 1][optimal_l];
+  }
+  return {
+    password: password,
+    guesses: guesses,
+    guesses_log10: this.<span class="apidocCodeKeywordSpan">log10</span>(guesses),
+    sequence: optimal_match_sequence
+  };
+},
+estimate_guesses: function(match, password) {
+  var estimation_functions, guesses, min_guesses;
+  if (match.guesses != null) {
+    return match.guesses;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.log2" id="apidoc.element.zxcvbn.scoring.log2">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>log2
+        <span class="apidocSignatureSpan">(n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log2 = function (n) {
+  return Math.log(n) / Math.log(2);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.most_guessable_match_sequence" id="apidoc.element.zxcvbn.scoring.most_guessable_match_sequence">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>most_guessable_match_sequence
+        <span class="apidocSignatureSpan">(password, matches, _exclude_additive)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">most_guessable_match_sequence = function (password, matches, _exclude_additive) {
+  var _, bruteforce_update, guesses, k, l, len, len1, len2, lst, m, make_bruteforce_match, matches_by_j, n, o, optimal, optimal_l
+, optimal_match_sequence, q, ref, ref1, u, unwind, update, w;
+  if (_exclude_additive == null) {
+    _exclude_additive = false;
+  }
+  n = password.length;
+  matches_by_j = (function() {
+    var o, ref, results;
+    results = [];
+    for (_ = o = 0, ref = n; 0 &#x3c;= ref ? o &#x3c; ref : o &#x3e; ref; _ = 0 &#x3c;= ref ? ++o : --o) {
+      results.push([]);
+    }
+    return results;
+  })();
+  for (o = 0, len = matches.length; o &#x3c; len; o++) {
+    m = matches[o];
+    matches_by_j[m.j].push(m);
+  }
+  for (q = 0, len1 = matches_by_j.length; q &#x3c; len1; q++) {
+    lst = matches_by_j[q];
+    lst.sort(function(m1, m2) {
+      return m1.i - m2.i;
+    });
+  }
+  optimal = {
+    m: (function() {
+      var ref, results, u;
+      results = [];
+      for (_ = u = 0, ref = n; 0 &#x3c;= ref ? u &#x3c; ref : u &#x3e; ref; _ = 0 &#x3c;= ref ? ++u : --u) {
+        results.push({});
+      }
+      return results;
+    })(),
+    pi: (function() {
+      var ref, results, u;
+      results = [];
+      for (_ = u = 0, ref = n; 0 &#x3c;= ref ? u &#x3c; ref : u &#x3e; ref; _ = 0 &#x3c;= ref ? ++u : --u) {
+        results.push({});
+      }
+      return results;
+    })(),
+    g: (function() {
+      var ref, results, u;
+      results = [];
+      for (_ = u = 0, ref = n; 0 &#x3c;= ref ? u &#x3c; ref : u &#x3e; ref; _ = 0 &#x3c;= ref ? ++u : --u) {
+        results.push({});
+      }
+      return results;
+    })()
+  };
+  update = (function(_this) {
+    return function(m, l) {
+      var competing_g, competing_l, g, k, pi, ref;
+      k = m.j;
+      pi = _this.estimate_guesses(m, password);
+      if (l &#x3e; 1) {
+        pi *= optimal.pi[m.i - 1][l - 1];
+      }
+      g = _this.factorial(l) * pi;
+      if (!_exclude_additive) {
+        g += Math.pow(MIN_GUESSES_BEFORE_GROWING_SEQUENCE, l - 1);
+      }
+      ref = optimal.g[k];
+      for (competing_l in ref) {
+        competing_g = ref[competing_l];
+        if (competing_l &#x3e; l) {
+          continue;
+        }
+        if (competing_g &#x3c;= g) {
+          return;
+        }
+      }
+      optimal.g[k][l] = g;
+      optimal.m[k][l] = m;
+      return optimal.pi[k][l] = pi;
+    };
+  })(this);
+  bruteforce_update = (function(_this) {
+    return function(k) {
+      var i, l, last_m, ref, results, u;
+      m = make_bruteforce_match(0, k);
+      update(m, 1);
+      results = [];
+      for (i = u = 1, ref = k; 1 &#x3c;= ref ? u &#x3c;= ref : u &#x3e;= ref; i = 1 &#x3c;= ref ? ++u : --u) {
+        m = make_bruteforce_match(i, k);
+        results.push((function() {
+          var ref1, results1;
+          ref1 = optimal.m[i - 1];
+          results1 = [];
+          for (l in ref1) {
+            last_m = ref1[l];
+            l = parseInt(l);
+            if (last_m.pattern === &#x27;bruteforce&#x27;) {
+              continue;
+            }
+            results1.push(update(m, l + 1));
+          }
+          return results1;
+        })());
+      }
+      return results;
+    };
+  })(this);
+  make_bruteforce_match = (function(_this) {
+    return function(i, j) {
+      return {
+        pattern: &#x27;bruteforce&#x27;,
+        token: password.slice(i, +j + 1 || 9e9),
+        i: i,
+        j: j
+      };
+    };
+  })(this);
+  unwind = (function(_this) {
+    return function(n) {
+      var candidate_g, candidate_l, g, k, l, optimal_match_sequence, ref;
+      optimal_match_sequence = [];
+      k = n - 1;
+      l = void 0;
+      g = Infinity;
+      ref = optimal.g[k];
+      for (candidate_l in ref) {
+        candidate_g = ref[candidate_l];
+        if (candidate_g &#x3c; g) {
+          l = candidate_l;
+          g = candidate_g;
+        }
+      }
+      while (k &#x3e;= 0) {
+        m = optimal.m[k][l];
+        optimal_match_sequence.unshift(m);
+        k = m.i - 1;
+        l--;
+      }
+      return optimal_match_sequence;
+    };
+  })(this);
+  for (k = u = 0, ref = n; 0 &#x3c;= ref ? u &#x3c; ref : u &#x3e; ref; k = 0 &#x3c;= ref ? ++u : --u) {
+    ref1 = matches_by_j[k];
+    for (w = 0, len2 = ref1.length; w &#x3c; len2; w++) {
+      m = ref1[w];
+      if (m.i &#x3e; 0) {
+        for (l in optimal.m[m.i - 1]) {
+          l = parseIn ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  match = greedy_match;
+  base_token = lazy_anchored.exec(match[0])[1];
+} else {
+  match = lazy_match;
+  base_token = match[1];
+}
+ref = [match.index, match.index + match[0].length - 1], i = ref[0], j = ref[1];
+base_analysis = scoring.<span class="apidocCodeKeywordSpan">most_guessable_match_sequence</span>(base_token, this.omnimatch(base_token
+));
+base_matches = base_analysis.sequence;
+base_guesses = base_analysis.guesses;
+matches.push({
+  pattern: &#x27;repeat&#x27;,
+  i: i,
+  j: j,
+  token: match[0],
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.nCk" id="apidoc.element.zxcvbn.scoring.nCk">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>nCk
+        <span class="apidocSignatureSpan">(n, k)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nCk = function (n, k) {
+  var d, o, r, ref;
+  if (k &#x3e; n) {
+    return 0;
+  }
+  if (k === 0) {
+    return 1;
+  }
+  r = 1;
+  for (d = o = 1, ref = k; 1 &#x3c;= ref ? o &#x3c;= ref : o &#x3e;= ref; d = 1 &#x3c;= ref ? ++o : --o) {
+    r *= n;
+    r /= d;
+    n -= 1;
+  }
+  return r;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+guesses = 0;
+L = match.token.length;
+t = match.turns;
+for (i = o = 2, ref1 = L; 2 &#x3c;= ref1 ? o &#x3c;= ref1 : o &#x3e;= ref1; i = 2 &#x3c;= ref1 ? ++o : --o) {
+  possible_turns = Math.min(t, i - 1);
+  for (j = q = 1, ref2 = possible_turns; 1 &#x3c;= ref2 ? q &#x3c;= ref2 : q &#x3e;= ref2; j = 1 &#x3c;= ref2 ? ++q : --q) {
+    guesses += this.<span class="apidocCodeKeywordSpan">nCk</span>(i - 1, j - 1) * s * Math.pow(d, j);
+  }
+}
+if (match.shifted_count) {
+  S = match.shifted_count;
+  U = match.token.length - match.shifted_count;
+  if (S === 0 || U === 0) {
+    guesses *= 2;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.regex_guesses" id="apidoc.element.zxcvbn.scoring.regex_guesses">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>regex_guesses
+        <span class="apidocSignatureSpan">(match)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">regex_guesses = function (match) {
+  var char_class_bases, year_space;
+  char_class_bases = {
+    alpha_lower: 26,
+    alpha_upper: 26,
+    alpha: 52,
+    alphanumeric: 62,
+    digits: 10,
+    symbols: 33
+  };
+  if (match.regex_name in char_class_bases) {
+    return Math.pow(char_class_bases[match.regex_name], match.token.length);
+  } else {
+    switch (match.regex_name) {
+      case &#x27;recent_year&#x27;:
+        year_space = Math.abs(parseInt(match.regex_match[0]) - this.REFERENCE_YEAR);
+        year_space = Math.max(year_space, this.MIN_YEAR_SPACE);
+        return year_space;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.repeat_guesses" id="apidoc.element.zxcvbn.scoring.repeat_guesses">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>repeat_guesses
+        <span class="apidocSignatureSpan">(match)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">repeat_guesses = function (match) {
+  return match.base_guesses * match.repeat_count;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.sequence_guesses" id="apidoc.element.zxcvbn.scoring.sequence_guesses">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>sequence_guesses
+        <span class="apidocSignatureSpan">(match)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sequence_guesses = function (match) {
+  var base_guesses, first_chr;
+  first_chr = match.token.charAt(0);
+  if (first_chr === &#x27;a&#x27; || first_chr === &#x27;A&#x27; || first_chr === &#x27;z&#x27; || first_chr === &#x27;Z&#x27; || first_chr === &#x27;0&#x27; || first_chr === &#x27;1&#x27; ||
+first_chr === &#x27;9&#x27;) {
+    base_guesses = 4;
+  } else {
+    if (first_chr.match(/\d/)) {
+      base_guesses = 10;
+    } else {
+      base_guesses = 26;
+    }
+  }
+  if (!match.ascending) {
+    base_guesses *= 2;
+  }
+  return base_guesses * match.token.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.spatial_guesses" id="apidoc.element.zxcvbn.scoring.spatial_guesses">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>spatial_guesses
+        <span class="apidocSignatureSpan">(match)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">spatial_guesses = function (match) {
+  var L, S, U, d, guesses, i, j, o, possible_turns, q, ref, ref1, ref2, ref3, s, shifted_variations, t, u;
+  if ((ref = match.graph) === &#x27;qwerty&#x27; || ref === &#x27;dvorak&#x27;) {
+    s = this.KEYBOARD_STARTING_POSITIONS;
+    d = this.KEYBOARD_AVERAGE_DEGREE;
+  } else {
+    s = this.KEYPAD_STARTING_POSITIONS;
+    d = this.KEYPAD_AVERAGE_DEGREE;
+  }
+  guesses = 0;
+  L = match.token.length;
+  t = match.turns;
+  for (i = o = 2, ref1 = L; 2 &#x3c;= ref1 ? o &#x3c;= ref1 : o &#x3e;= ref1; i = 2 &#x3c;= ref1 ? ++o : --o) {
+    possible_turns = Math.min(t, i - 1);
+    for (j = q = 1, ref2 = possible_turns; 1 &#x3c;= ref2 ? q &#x3c;= ref2 : q &#x3e;= ref2; j = 1 &#x3c;= ref2 ? ++q : --q) {
+      guesses += this.nCk(i - 1, j - 1) * s * Math.pow(d, j);
+    }
+  }
+  if (match.shifted_count) {
+    S = match.shifted_count;
+    U = match.token.length - match.shifted_count;
+    if (S === 0 || U === 0) {
+      guesses *= 2;
+    } else {
+      shifted_variations = 0;
+      for (i = u = 1, ref3 = Math.min(S, U); 1 &#x3c;= ref3 ? u &#x3c;= ref3 : u &#x3e;= ref3; i = 1 &#x3c;= ref3 ? ++u : --u) {
+        shifted_variations += this.nCk(S + U, i);
+      }
+      guesses *= shifted_variations;
+    }
+  }
+  return guesses;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.scoring.uppercase_variations" id="apidoc.element.zxcvbn.scoring.uppercase_variations">
+        function <span class="apidocSignatureSpan">zxcvbn.scoring.</span>uppercase_variations
+        <span class="apidocSignatureSpan">(match)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uppercase_variations = function (match) {
+  var L, U, chr, i, len, o, q, ref, ref1, regex, variations, word;
+  word = match.token;
+  if (word.match(this.ALL_LOWER) || word.toLowerCase() === word) {
+    return 1;
+  }
+  ref = [this.START_UPPER, this.END_UPPER, this.ALL_UPPER];
+  for (o = 0, len = ref.length; o &#x3c; len; o++) {
+    regex = ref[o];
+    if (word.match(regex)) {
+      return 2;
+    }
+  }
+  U = ((function() {
+    var len1, q, ref1, results;
+    ref1 = word.split(&#x27;&#x27;);
+    results = [];
+    for (q = 0, len1 = ref1.length; q &#x3c; len1; q++) {
+      chr = ref1[q];
+      if (chr.match(/[A-Z]/)) {
+        results.push(chr);
+      }
+    }
+    return results;
+  })()).length;
+  L = ((function() {
+    var len1, q, ref1, results;
+    ref1 = word.split(&#x27;&#x27;);
+    results = [];
+    for (q = 0, len1 = ref1.length; q &#x3c; len1; q++) {
+      chr = ref1[q];
+      if (chr.match(/[a-z]/)) {
+        results.push(chr);
+      }
+    }
+    return results;
+  })()).length;
+  variations = 0;
+  for (i = q = 1, ref1 = Math.min(U, L); 1 &#x3c;= ref1 ? q &#x3c;= ref1 : q &#x3e;= ref1; i = 1 &#x3c;= ref1 ? ++q : --q) {
+    variations += this.nCk(U + L, i);
+  }
+  return variations;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  }
+  return guesses;
+},
+dictionary_guesses: function(match) {
+  var reversed_variations;
+  match.base_guesses = match.rank;
+  match.uppercase_variations = this.<span class="apidocCodeKeywordSpan">uppercase_variations</span>(match);
+  match.l33t_variations = this.l33t_variations(match);
+  reversed_variations = match.reversed &#x26;&#x26; 2 || 1;
+  return match.base_guesses * match.uppercase_variations * match.l33t_variations * reversed_variations;
+},
+START_UPPER: /^[A-Z][^A-Z]+$/,
+END_UPPER: /^[^A-Z]+[A-Z]$/,
+ALL_UPPER: /^[^a-z]+$/,
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.zxcvbn.time_estimates" id="apidoc.module.zxcvbn.time_estimates">module zxcvbn.time_estimates</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.time_estimates.display_time" id="apidoc.element.zxcvbn.time_estimates.display_time">
+        function <span class="apidocSignatureSpan">zxcvbn.time_estimates.</span>display_time
+        <span class="apidocSignatureSpan">(seconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">display_time = function (seconds) {
+  var base, century, day, display_num, display_str, hour, minute, month, ref, year;
+  minute = 60;
+  hour = minute * 60;
+  day = hour * 24;
+  month = day * 31;
+  year = month * 12;
+  century = year * 100;
+  ref = seconds &#x3c; 1 ? [null, &#x27;less than a second&#x27;] : seconds &#x3c; minute ? (base = Math.round(seconds), [base, base + &#x22; second&#x22;]) :
+seconds &#x3c; hour ? (base = Math.round(seconds / minute), [base, base + &#x22; minute&#x22;]) : seconds &#x3c; day ? (base = Math.round(seconds /
+hour), [base, base + &#x22; hour&#x22;]) : seconds &#x3c; month ? (base = Math.round(seconds / day), [base, base + &#x22; day&#x22;]) : seconds &#x3c; year ? (
+base = Math.round(seconds / month), [base, base + &#x22; month&#x22;]) : seconds &#x3c; century ? (base = Math.round(seconds / year), [base, base
+ + &#x22; year&#x22;]) : [null, &#x27;centuries&#x27;], display_num = ref[0], display_str = ref[1];
+  if ((display_num != null) &#x26;&#x26; display_num !== 1) {
+    display_str += &#x27;s&#x27;;
+  }
+  return display_str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    online_no_throttling_10_per_second: guesses / 10,
+    offline_slow_hashing_1e4_per_second: guesses / 1e4,
+    offline_fast_hashing_1e10_per_second: guesses / 1e10
+  };
+  crack_times_display = {};
+  for (scenario in crack_times_seconds) {
+    seconds = crack_times_seconds[scenario];
+    crack_times_display[scenario] = this.<span class="apidocCodeKeywordSpan">display_time</span>(seconds);
+  }
+  return {
+    crack_times_seconds: crack_times_seconds,
+    crack_times_display: crack_times_display,
+    score: this.guesses_to_score(guesses)
+  };
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.time_estimates.estimate_attack_times" id="apidoc.element.zxcvbn.time_estimates.estimate_attack_times">
+        function <span class="apidocSignatureSpan">zxcvbn.time_estimates.</span>estimate_attack_times
+        <span class="apidocSignatureSpan">(guesses)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">estimate_attack_times = function (guesses) {
+  var crack_times_display, crack_times_seconds, scenario, seconds;
+  crack_times_seconds = {
+    online_throttling_100_per_hour: guesses / (100 / 3600),
+    online_no_throttling_10_per_second: guesses / 10,
+    offline_slow_hashing_1e4_per_second: guesses / 1e4,
+    offline_fast_hashing_1e10_per_second: guesses / 1e10
+  };
+  crack_times_display = {};
+  for (scenario in crack_times_seconds) {
+    seconds = crack_times_seconds[scenario];
+    crack_times_display[scenario] = this.display_time(seconds);
+  }
+  return {
+    crack_times_seconds: crack_times_seconds,
+    crack_times_display: crack_times_display,
+    score: this.guesses_to_score(guesses)
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.time_estimates.guesses_to_score" id="apidoc.element.zxcvbn.time_estimates.guesses_to_score">
+        function <span class="apidocSignatureSpan">zxcvbn.time_estimates.</span>guesses_to_score
+        <span class="apidocSignatureSpan">(guesses)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">guesses_to_score = function (guesses) {
+  var DELTA;
+  DELTA = 5;
+  if (guesses &#x3c; 1e3 + DELTA) {
+    return 0;
+  } else if (guesses &#x3c; 1e6 + DELTA) {
+    return 1;
+  } else if (guesses &#x3c; 1e8 + DELTA) {
+    return 2;
+  } else if (guesses &#x3c; 1e10 + DELTA) {
+    return 3;
+  } else {
+    return 4;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  for (scenario in crack_times_seconds) {
+    seconds = crack_times_seconds[scenario];
+    crack_times_display[scenario] = this.display_time(seconds);
+  }
+  return {
+    crack_times_seconds: crack_times_seconds,
+    crack_times_display: crack_times_display,
+    score: this.<span class="apidocCodeKeywordSpan">guesses_to_score</span>(guesses)
+  };
+},
+guesses_to_score: function(guesses) {
+  var DELTA;
+  DELTA = 5;
+  if (guesses &#x3c; 1e3 + DELTA) {
+    return 0;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
