@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.zxcvbn.zxcvbn">
+            function <span class="apidocSignatureSpan"></span>zxcvbn
+            <span class="apidocSignatureSpan">(password, user_inputs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">zxcvbn.</span>feedback</span>
 
         </li>
@@ -563,6 +572,43 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.zxcvbn" id="apidoc.module.zxcvbn">module zxcvbn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.zxcvbn.zxcvbn" id="apidoc.element.zxcvbn.zxcvbn">
+        function <span class="apidocSignatureSpan"></span>zxcvbn
+        <span class="apidocSignatureSpan">(password, user_inputs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">zxcvbn = function (password, user_inputs) {
+  var arg, attack_times, i, len, matches, prop, ref, result, sanitized_inputs, start, val;
+  if (user_inputs == null) {
+    user_inputs = [];
+  }
+  start = time();
+  sanitized_inputs = [];
+  for (i = 0, len = user_inputs.length; i &#x3c; len; i++) {
+    arg = user_inputs[i];
+    if ((ref = typeof arg) === &#x22;string&#x22; || ref === &#x22;number&#x22; || ref === &#x22;boolean&#x22;) {
+      sanitized_inputs.push(arg.toString().toLowerCase());
+    }
+  }
+  matching.set_user_input_dictionary(sanitized_inputs);
+  matches = matching.omnimatch(password);
+  result = scoring.most_guessable_match_sequence(password, matches);
+  result.calc_time = time() - start;
+  attack_times = time_estimates.estimate_attack_times(result.guesses);
+  for (prop in attack_times) {
+    val = attack_times[prop];
+    result[prop] = val;
+  }
+  result.feedback = feedback.get_feedback(result.score, result.sequence);
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
 
